@@ -101,25 +101,6 @@ h1, h2, h3, h4, h5, h6, .logo-texto, .menu a, .menu .menu-label {
     transition: 0.3s;
 }
 
-/*Sub Menus*/
-/*.menu a:hover::after { width: 100%; }
-
-.menu .menu-item { position: relative; display: inline-flex; }
-.menu .submenu {
-    opacity: 0; visibility: hidden; position: absolute;
-    top: 100%; left: 0; background: var(--brand-green);
-    padding: 8px 0; min-width: 200px; border-radius: 6px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3); z-index: 50;
-    transform: translateY(-6px); transition: 0.14s ease;
-    list-style: none;
-}
-.menu .submenu li {
-    list-style: none;
-}
-.menu .menu-item:hover .submenu { opacity: 1; visibility: visible; transform: translateY(0); }
-.menu .submenu a { color: var(--brand-gold); padding: 8px 16px; display: block; }
-.menu .submenu a:hover { background: #376b4f; }*/
-
 .redes {
     display: flex;
     gap: 25px; /* Espacio mayor entre iconos */
@@ -713,30 +694,6 @@ h1, h2, h3, h4, h5, h6, .logo-texto, .menu a, .menu .menu-label {
         text-align: center;
         cursor: pointer;
     }
-
-    /* Submenús Móvil */
-    /*.menu .submenu {
-        position: static;
-        display: none; 
-        background: rgba(255, 255, 255, 0.05);
-        padding: 10px 20px;
-        margin-top: 5px;
-        width: 100%;
-        list-style: none;
-    }
-
-    .menu-item.has-sub.abierto .submenu {
-        display: block;
-    }
-
-    .menu .submenu a {
-        font-size: 18px;
-        margin: 8px 0;
-    }
-
-    .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-    .menu-toggle.open span:nth-child(2) { opacity: 0; }
-    .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }*/
 
     /* 3. Slider de Valores (ALTURA ESTABLE) */
     .slider-valores {
