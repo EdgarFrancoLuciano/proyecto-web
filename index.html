@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Programa Motus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="logo">
+            <img src="./assets/img/logoSVG3.svg" alt="Logo Programa Motus">
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu">
+            <a href="index.html">Programa Motus</a>
+
+            <a href="index.html#asesorias">Asesorías</a>
+
+            <a href="index.html#presentacion">Quienes Somos</a>
+
+            <a href="index.html#nuestros-valores">Nuestros Valores</a>
+        </nav>
+
+        <div class="redes">
+            <a href="https://wa.me/34641006098?text=Hola%2C%20encontr%C3%A9%20su%20web%20Programa%20Motus%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n" 
+                target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="redes-link">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/psimigrantes?utm_source=qr&igsh=cHN4ZHltMTh2bHJ1" 
+                target="_blank" aria-label="Instagram" class="redes-link">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" onclick="abrirCorreo()" aria-label="Correo" class="redes-link">
+                <i class="fa-regular fa-envelope"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Servicios -->
+    <section id="inicio" class="bloque programa-motus">
+
+        <div class="motus">
+            <h2>PROGRAMA MOTUS</h2>
+            <div class="texto-destacado">
+                <p>
+                    El Programa Motus es un acompañamiento integral para personas que migran 
+                    voluntariamente y desean construir un proyecto de vida sólido en su nuevo país.
+                </p>
+
+                <p>
+                    El programa combina orientación práctica —documentación, vivienda y empleo— 
+                    con un enfoque clínico y personalizado que contempla el impacto emocional de 
+                    la migración. 
+                    A través de cinco módulos, Motus promueve una adaptación consciente, 
+                    saludable y orientada al bienestar, con un rol activo del migrante en su 
+                    propio proceso.
+                </p>
+
+                <p>
+                    Motus acompaña la integración personal, social y laboral, facilitando la 
+                    construcción de una vida estable y significativa en el nuevo destino.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Asesorías -->
+    <section id="asesorias" class="bloque asesorias">
+        <div class="asesoria-titulo"> 
+            <h2>ASESORÍAS</h2>
+        </div>
+        <div class="asesorias-grid">
+            <!-- ASESORÍA LABORAL -->
+            <div class="asesoria laboral">
+                <div class="asesoria-info">
+                    <h3>Asesoría Laboral</h3>
+                    <p>
+                        Asesoría laboral para personas migrantes que buscan posicionarse estratégicamente 
+                        en el mercado laboral de un nuevo país. Acompañamos de manera personalizada durante 
+                        8 semanas, en un proceso diseñado para traducir la experiencia profesional al 
+                        contexto local, definir un posicionamiento diferencial y construir una propuesta de 
+                        valor sólida y competitiva. Optimizamos CV, LinkedIn y discurso profesional, y 
+                        desarrollamos una estrategia de búsqueda y networking alineada con los objetivos, 
+                        el perfil y la realidad del mercado destino. Un servicio exclusivo, integral y 
+                        orientado a resultados, liderado por un equipo especializado en migración, 
+                        carrera profesional y empleabilidad.
+                    </p>
+                </div>
+            </div>
+            <!-- ASESORÍA LEGAL -->
+            <div class="asesoria legal">
+                <div class="asesoria-info">
+                    <h3>Asesoría Legal</h3>
+                    <p>
+                        Asesoría legal para personas migrantes que buscan definir una vía migratoria clara,
+                        segura y alineada con su proyecto personal y profesional. 
+                        Acompañamos de manera personalizada, durante 4 u 8 semanas, 
+                        en un proceso estratégico orientado a analizar cada caso en profundidad, 
+                        identificar las opciones legales viables y construir una hoja de ruta
+                        migratoria estructurada. Asistimos en la preparación y revisión de la 
+                        documentación, el orden adecuado de los trámites y el seguimiento del proceso, 
+                        incluyendo los primeros pasos de regularización en el país destino. 
+                        Un servicio integral, riguroso y orientado a decisiones informadas,
+                        respaldado por un equipo de profesionales con amplia experiencia en 
+                        migración y asesoría legal.
+                    </p>
+                </div>
+            </div>
+            <!-- ASESORÍA FAMILIAR -->
+            <div class="asesoria familiar">
+                <div class="asesoria-info">
+                    <h3>Asesoría Familiar</h3>
+                    <p>
+                        Asesoría familiar para personas migrantes que buscan acompañamiento profesional durante el 
+                        proceso migratorio. Guiamos de manera personalizada, durante 4 u 8 semanas, 
+                        con sesiones individuales y familiares, diseñando un plan claro para evaluar la 
+                        situación emocional de la familia, establecer objetivos específicos y fortalecer a 
+                        madres y padres con herramientas prácticas para apoyar a sus hijos.
+
+                        Analizamos la dinámica familiar y el impacto de la migración en cada miembro, 
+                        elaboramos un diagnóstico claro y compartido, y definimos un plan de 
+                        acompañamiento estructurado y adaptado a la edad y necesidades de los hijos. 
+                        Proveemos estrategias concretas para contención emocional, rutinas, adaptación 
+                        escolar y social, manejo de emociones y comunicación efectiva dentro del núcleo 
+                        familiar.
+
+                        Un servicio integral, cercano y orientado a resultados, respaldado por un 
+                        equipo de profesionales de la salud.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PRESENTACIÓN -->
+    <section id="presentacion" class="bloque presentacion">
+        <div class="titulo-presentacion">
+            <h2>QUIENES SOMOS</h2>
+        </div>
+        <div class="personas-grid">
+            <div class="persona">
+
+                <img src="./assets/img/florencia.jpg" alt="Florencia Fernández">
+
+                <h2>Florencia Fernández</h2>
+                <span class="rol">
+                    Licenciada en Psicología · Co-founder Programa Motus
+                </span>
+                <span class="rol">
+                    Especialista en acompañamiento clínico a familias en procesos migratorios
+                </span>
+                <a href="florencia.html" class="btn">Ver Más</a>
+            </div>
+
+            <div class="persona">
+                <img src="./assets/img/jime.jpg" alt="Jimena Tardivo">
+
+                <h2>Jimena Tardivo</h2>
+                <span class="rol">
+                    Licenciada en Psicología · Co-founder Programa Motus
+                </span>
+                <span class="rol">
+                    Consultora en procesos de integración y búsqueda laboral en contexto migratorio
+                </span>
+                <a href="jimena.html" class="btn">Ver Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section id="nuestros-valores" class="bloque">
+        <div class="titulo-valores">
+            <h3>NUESTROS VALORES</h3>
+        </div>
+
+        <div class="slider-valores">
+            <div class="valores-wrapper">
+                <button class="btn-slider prev" aria-label="Valor anterior">&#10094;</button>
+
+                <div class="valores-container">
+                    <div class="valor activo">
+                        <h4>Humanidad</h4>
+                        <p>Colocamos a la persona en el centro. Escuchamos sin juicio, con sensibilidad y respeto por la historia, la cultura y el ritmo de cada migrante.</p>
+                    </div>
+
+                    <div class="valor">
+                        <h4>Profesionalismo</h4>
+                        <p>Trabajamos desde un enfoque clínico, ético y con herramientas actualizadas. Cada proceso tiene estructura, propósito y cierre.</p>
+                    </div>
+
+                    <div class="valor">
+                        <h4>Integridad</h4>
+                        <p>Acompañamos de manera honesta y transparente, ofreciendo información precisa y acuerdos claros en cada etapa.</p>
+                    </div>
+
+                    <div class="valor">
+                        <h4>Acompañamiento integral</h4>
+                        <p>Trabajamos en las dimensiones prácticas y emocionales: documentación, vivienda y empleo, junto con identidad, adaptación y bienestar psicológico.</p>
+                    </div>
+
+                    <div class="valor">
+                        <h4>Autonomía</h4>
+                        <p>Creemos que cada persona es protagonista de su proceso. Motus guía y sostiene, pero cada migrante construye su propio camino.</p>
+                    </div>
+
+                    <div class="valor">
+                        <h4>Respeto y diversidad</h4>
+                        <p>Valoramos las diferencias culturales, lingüísticas y personales, acompañando cada proceso desde su singularidad.</p>
+                    </div>
+
+                    <div class="valor">
+                        <h4>Bienestar y adaptación saludable</h4>
+                        <p>Promovemos una integración consciente y equilibrada, brindando herramientas reales para sostener la vida emocional, social y laboral en el nuevo país.</p>
+                    </div>
+                </div>
+
+                <button class="btn-slider next" aria-label="Siguiente valor">&#10095;</button>
+            </div>
+
+            <div class="indicadores" role="tablist" aria-label="Indicadores de valores"></div>
+        </div>
+    </section>
+
+    <div class="galeria-destinos">
+        <div class="destino">
+            <img src="./assets/img/arg.jpeg" alt="Argentina">
+        </div>
+        <div class="destino">
+            <img src="./assets/img/esp.jpeg" alt="España">
+        </div>
+        <div class="destino">
+            <img src="./assets/img/ita.jpeg" alt="Italia">
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="logo-texto">Programa Motus • Migrar Con Sentido</div>
+
+            <div class="redes redes-footer">
+                <a href="https://wa.me/34641006098?text=Hola%2C%20encontr%C3%A9%20su%20web%20Programa%20Motus%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n" 
+                    target="_blank" class="redes-link" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/psimigrantes?utm_source=qr&igsh=cHN4ZHltMTh2bHJ1" target="_blank" class="redes-link" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" onclick="abrirCorreo()" aria-label="Correo" class="redes-link">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2026 Programa Motus</div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

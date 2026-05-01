@@ -1,0 +1,858 @@
+/* =========================================
+   1. RESET Y VARIABLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-green: #345443;
+    --brand-gold: #ba8f43;
+    --text-dark: #2e2e2e;
+    --header-height: 86px;
+    --indicator-width: 56px;
+    --indicator-height: 8px;
+    --indicator-radius: 6px;
+    --indicator-colors: #345443, #ba8f43; /* Tus colores originales */
+    --header-height: 86px;
+}
+
+html { 
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height); 
+}
+
+html, body { height: 100%; margin: 0; }
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 400; /* Peso normal para lectura */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. TIPOGRAFÍA Y CENTRADO GENERAL
+   ========================================= */
+h1, h2, h3, h4, h5, h6, .logo-texto, .menu a, .menu .menu-label {
+    font-family: 'Archivo', Arial, sans-serif;
+    font-weight: 700; /* Peso fuerte para que resalten */
+    letter-spacing: 0.5px;
+}
+
+.titulo-presentacion, .titulo-valores, .asesoria-titulo, .persona, .valor {
+    text-align: center;
+}
+
+/* =========================================
+   3. ESTRUCTURA DE BLOQUES
+   ========================================= */
+.main { flex: 1; }
+
+.bloque {
+    border-radius: 12px;
+    padding: 30px 5%;
+    margin: 28px auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 10px solid rgba(0,0,0,0.06);
+}
+
+/* =========================================
+   4. HEADER Y MENÚ
+   ========================================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--brand-green);
+    width: 100%;
+    padding: 0 2%;
+}
+
+.logo img { 
+    height: 150px;
+    display: block; 
+}
+
+.menu { display: flex; gap: 30px; align-items: center; }
+
+.menu a, .menu .menu-label {
+    color: var(--brand-gold);
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    padding: 8px 0;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: 0.3s;
+}
+
+/*Sub Menus*/
+/*.menu a:hover::after { width: 100%; }
+
+.menu .menu-item { position: relative; display: inline-flex; }
+.menu .submenu {
+    opacity: 0; visibility: hidden; position: absolute;
+    top: 100%; left: 0; background: var(--brand-green);
+    padding: 8px 0; min-width: 200px; border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); z-index: 50;
+    transform: translateY(-6px); transition: 0.14s ease;
+    list-style: none;
+}
+.menu .submenu li {
+    list-style: none;
+}
+.menu .menu-item:hover .submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+.menu .submenu a { color: var(--brand-gold); padding: 8px 16px; display: block; }
+.menu .submenu a:hover { background: #376b4f; }*/
+
+.redes {
+    display: flex;
+    gap: 25px; /* Espacio mayor entre iconos */
+    align-items: center;
+    padding-right: 20px;
+}
+
+/* Botón Hamburguesa (Oculto en PC) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--brand-gold);
+    transition: 0.3s;
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+
+.footer .footer-copy {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 20px;
+    opacity: 0.8;
+    width: 100%; /* Ocupa todo el ancho para poder centrarse */
+    display: block;
+}
+
+.programa-motus{
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../assets/img/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0%;
+    box-shadow: none;
+    border: none;
+}
+
+.motus{
+    padding: 30px 5%;
+    margin: 28px auto;
+    max-width: 1200px;
+}
+.texto-destacado{
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-top: 15px;
+}
+/* =========================================
+   6. ASESORÍAS Y PERSONAS (Grids)
+   ========================================= */
+
+/* Grid de Asesorías */
+.asesorias-grid {
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+}
+
+.asesoria {
+    position: relative; /* Necesario para posicionar el texto */
+    height: 500px; /* Ajusta la altura según necesites */
+    display: flex;
+    align-items: flex-end; /* Empuja el texto hacia abajo */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Capa para la imagen de fondo */
+.asesoria::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7; /* Estado inicial: un poco opaco/lavado */
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Imágenes específicas */
+.laboral::before { background-image: url("../assets/img/asesoriaLaboral.jpeg"); }
+.legal::before { background-image: url("../assets/img/asesoriaLegal.jpeg"); }
+.familiar::before { background-image: url("../assets/img/asesoriaFamiliar.jpeg"); }
+
+/* Contenedor del texto blanco */
+.asesoria-info {
+    position: relative;
+    z-index: 2; /* Por encima de la imagen */
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.4s ease;
+}
+
+.asesoria-info h3 {
+    margin: 0 0 10px 0;
+    color: #1a3a63;
+}
+
+.asesoria-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    background-color: transparent; /* Quitamos el fondo individual que tenías */
+}
+
+/* --- EFECTO HOVER --- */
+
+/* Al pasar el mouse, la imagen (before) se aclara */
+.asesoria:hover::before {
+    opacity: 1;
+}
+
+/* El cuadro de texto se vuelve blanco puro */
+.asesoria:hover .asesoria-info {
+    background-color: #ffffff;
+}
+
+/* NUEVA CLASE: Grid de Personas (Quienes Somos) */
+.personas-grid {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 40px; /* Reducimos un poco el espacio para que entren bien */
+    flex-wrap: nowrap; /* Forzamos a que no bajen en PC */
+    width: 100%; /* Para que en móvil bajen una tras otra */
+}
+
+.persona {
+    flex: 1; /* Esto hace que se repartan el espacio equitativamente */
+    max-width: 450px; /* Limitamos el ancho para que no se vean gigantes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.persona img {
+    width: 250px;   /* Aumentado de 250px a 320px */
+    height: 250px;  /* Mismo valor para mantener el círculo perfecto */
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 3px solid #ffffff; /* Un borde un poco más grueso para que resalte */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.persona h2 {
+    font-size: 22px;
+    font-family: 'Archivo', sans-serif;
+    margin-bottom: 5px;
+}
+
+.rol {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--brand-gold);
+    margin-bottom: 8px;
+    padding: 0 20px;
+}
+
+/* =========================================
+   7. SLIDER VALORES
+   ========================================= */
+.slider-valores {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos uno debajo de otro */
+    align-items: center;    /* Centra todo horizontalmente */
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 20px;   /* Espacio para que los indicadores no peguen abajo */
+}
+/* Contenedor de las flechas y el texto */
+/* Esto permite que las flechas estén a los lados y el texto al centro */
+.valores-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0; /* Aseguramos que no haya margen aquí */
+}
+.valores-container{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 50px;
+}
+.btn-slider {
+    background: transparent;
+    color: var(--brand-gold);
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.valor {
+    display: none;
+    padding: 10px 15px; /* Menos padding vertical */
+    min-height: 180px;  /* Reducido de 250px/380px a 180px */
+    text-align: center;
+}
+.valor.activo { display: block; }
+.valor h4 { color: var(--brand-gold); margin-bottom: 8px; }
+
+.indicadores {
+    display: flex !important; /* Forzamos que se muestre */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 20px;
+    min-height: 10px; /* Asegura que el contenedor tenga altura */
+}
+
+.indicador {
+    height: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #ccc; /* Color base por si el JS tarda en cargar */
+    
+    /* EN PC: Tamaño fijo para que no desaparezcan */
+    width: 50px; 
+    flex: 0 0 50px;
+}
+.indicador.activo {
+    opacity: 1;
+    transform: scaleY(1.18);
+}
+
+/* =========================================
+   8. COMPONENTES GENERALES
+   ========================================= */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: var(--brand-green);
+    color: var(--brand-gold);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover { background: var(--brand-gold); color: var(--brand-green); }
+
+.redes-link { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* Tamaño del círculo */
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05); /* Fondo sutil inicial */
+    transition: all 0.3s ease; /* Suavidad en la animación */
+    text-decoration: none;
+}
+
+/* Efecto al pasar el mouse (Sombreado/Brillo) */
+.redes-link:hover {
+    background: rgba(255, 255, 255, 0.15); /* Se ilumina el fondo */
+    transform: translateY(-3px) scale(1.1); /* Sube un poquito y se agranda */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombreado bajo el icono */
+}
+
+.redes-link i {
+    color: #ba8f43;
+    font-size: 20px;
+}
+
+.footer { background: var(--brand-green); color: var(--brand-gold); padding: 18px 0; }
+.footer-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 2%;
+    display: flex; align-items: center; justify-content: space-between;
+}
+
+/* =========================================
+   9. PERSONAS INDIVIDUALES (DISEÑO REVISTA)
+========================================= */
+.personas-contenedor {
+    padding: 60px 8%;
+    display: block; /* Cambiamos flex por block para permitir el flotado */
+}
+
+/* El título siempre arriba y centrado */
+.personas-contenedor h1 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 38px;
+    color: var(--brand-green);
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    border-bottom: 2px solid var(--brand-gold);
+    padding-bottom: 15px;
+}
+
+/* Contenedor de la imagen: Flotando a la izquierda */
+.ctn-img-ind {
+    float: left; /* Aquí ocurre la magia del diseño revista */
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.ctn-img-ind img {
+    width: 300px; /* Tamaño profesional para este diseño */
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px; /* Rectangular con bordes suaves queda más tipo revista */
+    border-left: 8px solid var(--brand-gold); /* Detalle decorativo lateral */
+    box-shadow: 15px 15px 0px rgba(52, 84, 67, 0.1); /* Sombra sólida tipo diseño editorial */
+}
+
+/* Ajuste del texto para que rodee la imagen */
+.informacion-personas {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #333;
+    text-align: justify;
+}
+
+.informacion-personas p {
+    margin-bottom: 20px;
+}
+
+/* Limpiar el flotado al final para que el footer no suba */
+.personas-contenedor::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* =========================================
+   .10 DISEÑO PARA PÁGINAS DE ASESORÍAS
+========================================= */
+
+/* Contenedor principal del programa */
+.programa {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+/* El cuadro blanco que contiene la info */
+.programa .asesoria {
+    max-width: 900px;
+    margin: 0 auto;
+    background: transparent; /* Quitamos el fondo gris del home para estas páginas */
+    text-align: left; /* Alineación natural para lectura larga */
+}
+
+/* Título Principal (Archivo) */
+.programa h3 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 34px;
+    color: var(--brand-green);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--brand-gold);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Subtítulo destacado (Montserrat) */
+.programa .subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Bloque de Datos (Duración y Modalidad) */
+.programa .datos {
+    background: #f1f3f2; /* Un verde/gris muy clarito */
+    padding: 20px;
+    border-radius: 8px;
+    list-style: none;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--brand-green);
+}
+
+.programa .datos li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--brand-green);
+}
+
+/* Títulos de Secciones Internas (H4) */
+.programa h4 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 24px;
+    color: var(--brand-gold);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Títulos de los Pasos (1, 2, 3...) */
+.programa .asesoria h3:not(:first-child) {
+    font-size: 20px;
+    border-bottom: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #333;
+    display: block;
+}
+
+/* Listas de beneficios y puntos (Montserrat) */
+.programa ul:not(.datos) {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.programa ul:not(.datos) li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    position: relative;
+    list-style: none;
+}
+
+/* Icono de check personalizado para las listas */
+.programa ul:not(.datos) li::before {
+    content: "\f00c"; /* Icono Check de FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--brand-gold);
+    position: absolute;
+    left: -25px;
+    font-size: 14px;
+}
+
+/* Párrafos de desarrollo */
+.programa p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Resaltados en negrita */
+.programa strong {
+    color: var(--brand-green);
+    font-weight: 600;
+}
+
+/* =========================================
+   .11 GALERÍA DE PAÍSES (POSTALES)
+========================================= */
+.galeria-destinos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px auto;
+    padding: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.destino {
+    position: relative;
+    width: 300px;
+    transition: transform 0.4s ease;
+}
+
+.destino img {
+    width: 100%;
+    object-fit: cover;
+    border: 8px solid #fff; /* Efecto foto Polaroid */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+.destino span {
+    display: block;
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+    color: var(--brand-green);
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* Efecto de inclinación para que parezcan fotos reales */
+.destino:nth-child(1) { transform: rotate(-3deg); }
+.destino:nth-child(2) { transform: rotate(2deg); }
+.destino:nth-child(3) { transform: rotate(-1deg); }
+
+.destino:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 10;
+}
+
+/* =========================================
+    RESPONSIVE GLOBAL (Móviles y Tablets)
+========================================= */
+@media (max-width: 850px) {
+    /* 1. Ajustes de Bloques Generales */
+    .bloque {
+        width: 95%;
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    /* 2. Header y Menú (Pantalla Completa) */
+    .header {
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute; 
+        top: 25px;
+        right: 20px;
+        z-index: 10001;
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .menu {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%;  
+        height: 100vh; 
+        background: var(--brand-green);
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        padding: 0;
+        transition: right 0.4s ease-in-out;
+        z-index: 10000;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu a, .menu .menu-label {
+        font-size: 24px;
+        margin: 15px 0;
+        color: var(--brand-gold);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /* Submenús Móvil */
+    /*.menu .submenu {
+        position: static;
+        display: none; 
+        background: rgba(255, 255, 255, 0.05);
+        padding: 10px 20px;
+        margin-top: 5px;
+        width: 100%;
+        list-style: none;
+    }
+
+    .menu-item.has-sub.abierto .submenu {
+        display: block;
+    }
+
+    .menu .submenu a {
+        font-size: 18px;
+        margin: 8px 0;
+    }
+
+    .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }*/
+
+    /* 3. Slider de Valores (ALTURA ESTABLE) */
+    .slider-valores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        overflow: hidden; /* Evita desbordamientos */
+    }
+
+    .valores-wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        /* Definimos una altura mínima fija para que el diseño NO salte */
+        min-height: 250px; 
+    }
+
+    .btn-slider {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prev { left: 0px; }
+    .next { right: 0px; }
+
+    .valores-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .valor {
+        width: 100%;
+        padding: 0 45px; /* Evita que el texto toque las flechas */
+        display: none;
+        flex-direction: column;
+        justify-content: center; /* Centra el texto verticalmente dentro de la altura fija */
+        text-align: center;
+        /* Forzamos la misma altura para todos los valores */
+        min-height: 250px; 
+    }
+
+    .valor.activo {
+        display: flex;
+        animation: fade 0.5s;
+    }
+
+    .indicadores {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 15px; /* Distancia controlada */
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .indicador {
+        flex: 1;
+        max-width: 35px;
+        height: 5px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .indicador.activo {
+        transform: scaleY(1.4);
+    }
+
+    /* 4. Grids y Footer */
+    .asesorias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .asesoria {
+        height: auto; /* Permite que la altura se ajuste al contenido */
+        display: block; /* Cambiamos a block para que cada asesoría ocupe toda la fila */
+    }
+
+    .personas-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ctn-img-ind {
+        float: none;
+        margin: 0 auto 25px auto;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .redes {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+    }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
